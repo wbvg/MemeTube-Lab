@@ -1,0 +1,17 @@
+
+<div class="form-unit">
+<form  method='post' action='<%= @video.nil? ? '/create' : "/videos/#{@video['id']}" %>'     >
+
+  <input class="input-data" name='name' placeholder="Name" autofocus value="<%= @video['name'] if @video %>">
+  <input class="input-data" name='title' placeholder="Title" value="<%= @video['title'] if @video %>">
+  <input class="input-data" name='description' placeholder="Description" value="<%= @video['description'] if @video %>">
+    <input class="input-data" name='url' placeholder="Paste your Favourite Video URL" value="<%= @video['url'] if @video %>">
+
+
+
+
+      <input class="input-data"name='genre' placeholder="Genre" value="<%= @video['genre'] if @video %>"><br/>
+  <button class="btn btn-primary btn-large">Submit</button>
+</form>
+
+</div>

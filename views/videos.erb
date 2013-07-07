@@ -1,0 +1,34 @@
+<div class="hero-unit">
+
+<h1>Latest Videos</h1>
+</div>
+
+
+<div class="hero-unit"
+<% @videos.each do |row|%>
+<section>
+
+   <% @url = row['url'] %>
+  <%= erb :url %>
+
+
+<h2><%= row['title']%></h2>
+  <%= row['description']%>
+
+<h3><%= row['genre']%></h3>
+
+<h4>Uploaded by <%= row['name'] %></h4>
+
+
+
+
+  <a href="/videos/<%= row['id'] %>/edit"><button class="btn btn-success">Edit</button></a>
+
+  <form method='post' action='/videos/<%= row['id'] %>/delete'>
+    <button class="btn btn-danger">Delete</button>
+  </form>
+
+
+</section>
+<% end %>
+</div>
